@@ -130,7 +130,10 @@ def fetch_anime_data():
             anilist_eps = anilist_info.get("episodes")
             next_ep = anilist_info.get("nextAiringEpisode")
 
-            if isinstance(mal_eps, int) and isinstance(anilist_eps, int):
+            if (
+                isinstance(mal_eps, int) and mal_eps > 0 and
+                isinstance(anilist_eps, int) and anilist_eps > 0
+            ):
                 offset = mal_eps - anilist_eps
                 total_eps = anilist_eps + offset
                 if next_ep and "episode" in next_ep:
