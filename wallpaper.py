@@ -316,7 +316,8 @@ def main():
 
     window.setWindowFlags(
         Qt.WindowType.FramelessWindowHint |
-        Qt.WindowType.Tool
+        Qt.WindowType.Tool |
+        Qt.WindowType.WindowDoesNotAcceptFocus
     )
     window.show()
 
